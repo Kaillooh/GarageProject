@@ -9,12 +9,13 @@
       <?php //phpinfo(); ?>
 
       <?php
-      $bdd = new PDO('mysql:host=localhost;dbname=PiecesAuto;charset=utf8', 'tatoufff', 'babarbabar');
+
+      include('/var/webconnect/connect.php');
       
       $serial = $_GET['id'];
       $query = "SELECT * FROM Pieces WHERE Serial LIKE '".$serial."'";
 
-      echo($query);
+      //echo("HELLO");
 
       $reponse = $bdd->query($query);
       $data = $reponse->fetchAll();
